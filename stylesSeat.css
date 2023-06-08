@@ -1,0 +1,107 @@
+:root {
+  --dark-blue: #20212c;
+  --seat-neutral: #3d3b47;
+  --seat-selected: #1db140;
+  --seat-booked: #fff;
+
+  --seat-width: 40px;
+  --seat-height: calc(var(--seat-width) * 0.8);
+  --grid-seat-width: calc(var(--seat-width) * 1.2);
+  --grid-seat-width-end: calc(var(--seat-width) * 1.8);
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--dark-blue);
+  color: #fff;
+}
+
+#seatContainer {
+  display: grid;
+  grid-template-columns:
+    var(--grid-seat-width)
+    var(--grid-seat-width-end)
+    repeat(3, var(--grid-seat-width))
+    var(--grid-seat-width-end)
+    repeat(2, var(--grid-seat-width));
+  grid-template-rows: repeat(6, var(--grid-seat-width));
+}
+
+.seat {
+  height: var(--seat-height);
+  width: var(--seat-width);
+  background-color: var(--seat-neutral);
+  border-radius: 7px;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seatt {
+  height: var(--seat-height);
+  width: var(--seat-width);
+  background-color: var(--seat-neutral);
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seatt.booked {
+  background-color: var(--seat-booked);
+  color: #3d3b47;
+}
+
+.ornek {
+  padding: 5px;
+}
+
+.seat.selected {
+  background-color: var(--seat-selected);
+  transition: 0.3s;
+}
+
+.selectedd {
+  background-color: var(--seat-selected);
+  color: #3d3b47;
+  font-weight: bold;
+}
+
+.seat.booked {
+  background-color: var(--seat-booked);
+  transition: 0.3s;
+  color: #20212c;
+  font-weight: bold;
+}
+
+#bookBtn {
+  color: var(--dark-blue);
+  background-color: #fff;
+  border: none;
+  margin-top: 42px;
+  margin-bottom: 42px;
+  padding: 20px 0;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.1px;
+}
+
+.info {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.movieInfo {
+  margin-bottom: 45px;
+}
+#movieName {
+  font-size: 26px;
+  color: #1db140;
+}
